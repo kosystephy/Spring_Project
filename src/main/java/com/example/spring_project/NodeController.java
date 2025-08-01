@@ -8,6 +8,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/nodes")
+@CrossOrigin
 public class NodeController {
 
     @Autowired
