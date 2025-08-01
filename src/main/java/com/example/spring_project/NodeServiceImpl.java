@@ -1,8 +1,11 @@
 package com.example.spring_project;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class NodeServiceImpl implements NodeService{
     private Map<Integer, Node> nodes = new HashMap<>();
     private int currentId = 1;
