@@ -36,7 +36,7 @@ public class NodeController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Node> updateNode(@PathVariable int id, @RequestBody Node node) {
-        if( crudRepository.updateNode(id, node) == null){
+        if( crudRepository.updateNode(id, node) == 0){
             return ResponseEntity.notFound().build();
         }
         else{
