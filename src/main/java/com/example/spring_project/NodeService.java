@@ -3,8 +3,8 @@ package com.example.spring_project;
 import java.util.Map;
 
 public interface NodeService {
-    void addNode(Node newNode);
-    void deleteNode(int id);
-    void updateNode(int id,Node updateNode);
-    void getNodeById(int id);
+    Node addNode(Node newNode);
+    boolean deleteNode(int id);
+    Node updateNode(int id,Node updatedNode);
+    Node getNodeById(int id);
 }
