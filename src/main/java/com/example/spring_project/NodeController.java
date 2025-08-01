@@ -35,7 +35,7 @@ public class NodeController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Node> updateNode(@PathVariable int id, @RequestBody Node node) {
-        if( crudRepository.updateNode(id, node) == 0){
+        if( crudRepository.updateNode(id, node) == null){
             return ResponseEntity.notFound().build();
         }
         else{
@@ -44,13 +44,7 @@ public class NodeController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteNode(@PathVariable int id) {
-        Optional<Node> node = crudRepository.deleteNode(id);
-        if(node.isEmpty()){
-            return ResponseEntity.notFound().build();
-        }
-        else{
-            return ResponseEntity.ok().body(node.get().getName());
-        }
+    public String deleteNode(@PathVariable int id) {
+        return crudRepository.deleteNode(id) ? "Node deleted" : "Node not found";
     }
 }
