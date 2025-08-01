@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: development
+resources:
+  db: h2
+  logs: C:\temps\logs\
+  secure: false
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+resources:
+  db: oracle
+  logs: //PROD_SERVER/logs/
+  secure: true

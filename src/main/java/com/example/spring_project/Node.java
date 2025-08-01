@@ -62,4 +62,15 @@ public class Node { @Id
     public void setLongitude(int longitude) {
         this.longitude = longitude;
     }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                '}';
+    }
 }
